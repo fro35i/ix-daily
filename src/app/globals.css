@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #161616;
+  --color-text: #262626;
+  --color-muted: #6f6f6f;
+  --color-line: #c6c6c6;
+  --color-field: #8d8d8d;
+  --color-surface: #f4f4f4;
+  --color-brand: #6929c4;
+  --color-brand-hover: #5518a5;
+  --color-brand-active: #430386;
+  --color-brand-soft: #f7f5ff;
+  --color-brand-deep: #2f0163;
+  --color-brand-light: #dcc7ff;
+  --color-error: #da1e28;
+
+  --container-page: 70rem;
+
+  --text-display: clamp(2.5rem, 1.75rem + 3vw, 4rem);
+  --text-display--line-height: 1.1;
+  --text-h1: clamp(2rem, 1.4rem + 2.6vw, 3.75rem);
+  --text-h1--line-height: 1.2;
+  --text-h2: clamp(1.625rem, 1.3rem + 1.4vw, 2.625rem);
+  --text-h2--line-height: 1.2;
+  --text-h3: clamp(1.125rem, 1rem + 0.6vw, 1.5rem);
+  --text-h3--line-height: 1.33;
+  --text-lead: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
+  --text-lead--line-height: 1.4;
+  --text-label: 0.75rem;
+  --text-label--line-height: 1rem;
+  --text-label--letter-spacing: 0.02em;
+}
+
+@theme inline {
+  --font-sans: var(--font-plex-sans), "Helvetica Neue", Arial, sans-serif;
+}
+
+@utility page-container {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--container-page);
+  padding-inline: 1rem;
+
+  @media (width >= 48rem) {
+    padding-inline: 2.5rem;
+  }
+
+  @media (width >= 64rem) {
+    padding-inline: 4rem;
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--color-white);
+    color: var(--color-text);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: var(--color-ink);
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+}
